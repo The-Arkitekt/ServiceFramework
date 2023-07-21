@@ -1,4 +1,4 @@
-#include "Reciever.h"
+#include "Server.h"
 #include "Logger.h"
 
 namespace ServiceFramework
@@ -7,10 +7,10 @@ namespace ServiceFramework
 namespace Communication
 {
 
-Reciever::Reciever():
+Server::Server():
 	CommunicationBase()
 {
-	Logger::Logger::toStdOutOnly("Receiver Constructed");
+	Logger::Logger::toStdOutOnly("Server Constructed");
 }
 
 

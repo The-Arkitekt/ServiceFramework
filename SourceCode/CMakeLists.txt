@@ -30,22 +30,22 @@ target_link_libraries(CommunicationBase PUBLIC
   Buffer
 )
 
-#RECIEVER
-add_library(Reciever ${COMMUNICATION_DIR}/Reciever.cpp)
-target_include_directories(Reciever PUBLIC
+#SERVER
+add_library(Server ${COMMUNICATION_DIR}/Server.cpp)
+target_include_directories(Server PUBLIC
   ${COMMUNICATION_DIR}
 )
-target_link_libraries(Reciever PUBLIC 
+target_link_libraries(Server PUBLIC 
   CommunicationBase
   Logger
 )
 
-#TRANSMITTER
-add_library(Transmitter ${COMMUNICATION_DIR}/Transmitter.cpp)
-target_include_directories(Transmitter PUBLIC
+#CLIENT
+add_library(Client ${COMMUNICATION_DIR}/Client.cpp)
+target_include_directories(Client PUBLIC
   ${COMMUNICATION_DIR}
 )
-target_link_libraries(Transmitter PUBLIC 
+target_link_libraries(Client PUBLIC 
   CommunicationBase
   Logger
 )

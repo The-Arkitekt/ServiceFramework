@@ -1,5 +1,5 @@
-#ifndef SERVICE_FRAMEWORK_TRANSMITTER_H
-#define SERVICE_FRAMEWORK_TRANSMITTER_H
+#ifndef SERVICE_FRAMEWORK_CLIENT_H
+#define SERVICE_FRAMEWORK_CLIENT_H
 
 #include "CommunicationBase.h"
 
@@ -9,10 +9,10 @@ namespace ServiceFramework
 namespace Communication
 {
 
-class Transmitter : public CommunicationBase
+class Client : public CommunicationBase
 {
 public:
-	Transmitter();
+	Client();
 
 };
 

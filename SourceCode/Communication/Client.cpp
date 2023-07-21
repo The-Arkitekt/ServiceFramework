@@ -1,4 +1,4 @@
-#include "Transmitter.h"
+#include "Client.h"
 #include "Logger.h"
 
 namespace ServiceFramework
@@ -8,10 +8,10 @@ namespace Communication
 {
 
 
-Transmitter::Transmitter():
+Client::Client():
 	CommunicationBase()
 {
-	Logger::Logger::toStdOutOnly("Transmitter Constructed");
+	Logger::Logger::toStdOutOnly("Client Constructed");
 };
 
 }
