@@ -4,7 +4,7 @@
 namespace ServiceFramework
 {
 
-namespace Logger
+namespace Utilities
 {
 
 Logger::Logger()

@@ -6,7 +6,7 @@
 namespace ServiceFramework
 {
 
-namespace Logger
+namespace Utilities
 {
 
 class Logger

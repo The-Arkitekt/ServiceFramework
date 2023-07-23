@@ -8,9 +8,11 @@ namespace Communication
 {
 
 Server::Server():
-	CommunicationBase()
+  m_connections(),
+  m_buffers    (),
+  m_configured (false)
 {
-	Logger::Logger::toStdOutOnly("Server Constructed");
+	Utilities::Logger::toStdOutOnly("Server Constructed");
 }
 
 

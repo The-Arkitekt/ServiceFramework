@@ -7,10 +7,11 @@ echo "Cleaning ServiceFramework build for: ${1}"
 if [ -d ${BLD_PATH} ]
 then 
   cd ${BLD_PATH}
-  echo "Entered build directory: ${PWD}"
   
   rm -rf *
-  echo "Build directory contents after clean: ${ls}"
+  echo "Build directory contents after clean:"
+  ls
+  
 else
   echo "Invalid build directory: ${BLD_PATH}"
 fi

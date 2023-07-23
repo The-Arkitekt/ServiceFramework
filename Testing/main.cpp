@@ -10,7 +10,9 @@ int main()
 	ServiceFramework::Communication::Client client;
 	ServiceFramework::Communication::Server server;
 
-	ServiceFramework::Logger::Logger::toStdOutOnly("Finished Test");
+	//server.configure("../data/ServerConfig.xml");
+
+	ServiceFramework::Utilites::Logger::toStdOutOnly("Finished Test");
 
 	return 0;
 }

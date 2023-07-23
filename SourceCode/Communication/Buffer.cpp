@@ -9,7 +9,7 @@ namespace Communication
 
 Buffer::Buffer()
 {
-	Logger::Logger::toStdOutOnly("Buffer Constructed");
+	Utilities::Logger::toStdOutOnly("Buffer Constructed");
 }
 
 }

@@ -7,11 +7,12 @@ namespace ServiceFramework
 namespace Communication
 {
 
-
 Client::Client():
-	CommunicationBase()
+  m_connection(),
+  m_buffer    (),
+  m_configured(false)
 {
-	Logger::Logger::toStdOutOnly("Client Constructed");
+	Utilities::Logger::toStdOutOnly("Client Constructed");
 };
 
 }
