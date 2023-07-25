@@ -2,8 +2,8 @@
 #define SERVICE_FRAMEWORK_CLIENT_H
 
 #include "Connection.h"
-#include "Buffer.h"
 #include "XmlFile.h"
+#include "Buffer.h"
 
 namespace ServiceFramework
 {

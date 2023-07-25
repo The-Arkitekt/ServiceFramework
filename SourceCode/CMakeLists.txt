@@ -20,11 +20,14 @@ target_include_directories(Xml PUBLIC
   ${XML_DR}
   ${RAPID_XML_DIR}
 )
+target_link_libraries(Xml PUBLIC
+  Logger
+)
 
 #BUFFER
 add_library(Buffer ${COMMUNICATION_DIR}/Buffer.cpp)
 target_include_directories(Buffer PUBLIC
-  ${LOGGER_DIR}
+  ${COMMUNICATION_DIR}
 )
 target_link_libraries(Buffer PUBLIC
   Logger
@@ -37,8 +40,8 @@ target_include_directories(Server PUBLIC
   ${XML_DIR}
 )
 target_link_libraries(Server PUBLIC 
-  Logger
   Xml
+  Logger
   Buffer
 )
 
@@ -49,7 +52,7 @@ target_include_directories(Client PUBLIC
   ${XML_DIR}
 )
 target_link_libraries(Client PUBLIC 
+  Xml  
   Logger
-  Xml
   Buffer
 )
