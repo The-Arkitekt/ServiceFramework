@@ -21,7 +21,6 @@ public:
 
 private:
 	std::vector<Connection> m_connections;
-	std::vector<Buffer> m_buffers;
 	bool m_configured;
 };
 

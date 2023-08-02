@@ -18,8 +18,7 @@ add_subdirectory(${SERVICE_FRAMEWORK_SOURCE_DIR} ${SERVICE_FRAMEWORK_BINARY_DIR}
 target_link_libraries(${EXECUTABLE_NAME} PUBLIC 
   Logger
   Xml
-  Server
-  Client
+  TextMessage
 )
 
 target_include_directories(${EXECUTABLE_NAME} PUBLIC

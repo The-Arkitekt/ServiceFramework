@@ -20,7 +20,6 @@ public:
 
 private:
 	Connection m_connection;
-	Buffer m_buffer;
 	bool m_configured;
 };
 

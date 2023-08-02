@@ -1,4 +1,5 @@
 set(COMMUNICATION_DIR ${CMAKE_CURRENT_SOURCE_DIR}/Communication)
+set(MESSAGE_DIR       ${COMMUNICATION_DIR}/Message)
 set(UTILITIES_DIR     ${CMAKE_CURRENT_SOURCE_DIR}/Utilities)
 set(LOGGER_DIR        ${UTILITIES_DIR}/Logger)
 set(XML_DIR           ${UTILITIES_DIR}/Xml)
@@ -17,42 +18,25 @@ target_include_directories(Logger PUBLIC
 #XML
 add_library(Xml ${XML_DIR}/XmlFile.cpp)
 target_include_directories(Xml PUBLIC
-  ${XML_DR}
+  ${XML_DIR}
   ${RAPID_XML_DIR}
 )
 target_link_libraries(Xml PUBLIC
   Logger
 )
 
-#BUFFER
-add_library(Buffer ${COMMUNICATION_DIR}/Buffer.cpp)
-target_include_directories(Buffer PUBLIC
-  ${COMMUNICATION_DIR}
-)
-target_link_libraries(Buffer PUBLIC
-  Logger
+#MESSAGES
+add_library(Message ${MESSAGE_DIR}/Message.cpp)
+target_include_directories(Message PUBLIC
+  ${MESSAGE_DIR}
 )
 
-#SERVER
-add_library(Server ${COMMUNICATION_DIR}/Server.cpp)
-target_include_directories(Server PUBLIC
-  ${COMMUNICATION_DIR}
-  ${XML_DIR}
+add_library(TextMessage ${MESSAGE_DIR}/TextMessage.cpp)
+target_include_directories(TextMessage PUBLIC
+  ${MESSAGE_DIR}
 )
-target_link_libraries(Server PUBLIC 
-  Xml
-  Logger
-  Buffer
+target_link_libraries(TextMessage PUBLIC
+  Message
 )
 
-#CLIENT
-add_library(Client ${COMMUNICATION_DIR}/Client.cpp)
-target_include_directories(Client PUBLIC
-  ${COMMUNICATION_DIR}
-  ${XML_DIR}
-)
-target_link_libraries(Client PUBLIC 
-  Xml  
-  Logger
-  Buffer
-)
+

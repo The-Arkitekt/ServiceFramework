@@ -9,7 +9,6 @@ namespace Communication
 
 Client::Client():
   m_connection(),
-  m_buffer    (),
   m_configured(false)
 {
 	Utilities::Logger::toStdOutOnly("Client Constructed");

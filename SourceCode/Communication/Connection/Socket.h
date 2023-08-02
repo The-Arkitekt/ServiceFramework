@@ -3,6 +3,7 @@
 
 #include "Connection.h"
 
+
 namespace ServiceFramework
 {
 
@@ -14,6 +15,8 @@ namespace Communication
 
 class Socket : public Connection
 {
+
+
 
 };
 
