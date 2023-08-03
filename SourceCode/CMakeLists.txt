@@ -25,9 +25,9 @@ target_link_libraries(Xml PUBLIC
   Logger
 )
 
-#MESSAGES
-add_library(Message ${MESSAGE_DIR}/Message.cpp)
-target_include_directories(Message PUBLIC
+#MESSAGING
+add_library(Payload ${MESSAGE_DIR}/Payload.cpp)
+target_include_directories(Payload PUBLIC
   ${MESSAGE_DIR}
 )
 
@@ -36,7 +36,15 @@ target_include_directories(TextMessage PUBLIC
   ${MESSAGE_DIR}
 )
 target_link_libraries(TextMessage PUBLIC
-  Message
+  Payload
 )
 
+#BUFFER
+add_library(Buffer ${COMMUNICATION_DIR}/Buffer.cpp)
+target_include_directories(Buffer PUBLIC
+  ${COMMUNICATION_DIR}
+)
+target_link_libraries(Buffer PUBLIC
+  Payload
+)
 

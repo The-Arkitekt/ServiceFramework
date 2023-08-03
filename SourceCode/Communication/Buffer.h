@@ -1,8 +1,8 @@
 #ifndef SERVICE_FRAMEWORK_BUFFER_H
 #define SERVICE_FRAMEWORK_BUFFER_H
 
-#include "Message.h"
-#include <stdint>
+#include "Payload.h"
+#include <cstdint>
 #include <vector>
 
 namespace ServiceFramework
@@ -15,19 +15,21 @@ class Buffer
 {
 public:
 
-	Buffer(const uint8_t capacity);
+	Buffer(const uint8_t capacity, const uint8_t ID);
 
 	//Getters
 	uint8_t capacity();
 	uint8_t size();
 
-	bool push(const Message msg);
-	bool pop(Message& msg);
+	bool push(const Payload& payload);
+	bool pop(Payload& payload);
 	void clear();
 
 private:
 
-	std::vector<Message> m_bufferContents;
+	uint8_t m_ID;
+	uint8_t m_capacity;
+	std::vector<Payload> m_data;
 
 };
 

@@ -19,6 +19,7 @@ target_link_libraries(${EXECUTABLE_NAME} PUBLIC
   Logger
   Xml
   TextMessage
+  Buffer
 )
 
 target_include_directories(${EXECUTABLE_NAME} PUBLIC

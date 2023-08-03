@@ -6,27 +6,31 @@ namespace ServiceFramework
 namespace Communication
 {
 
-Buffer::Buffer(const uint8_t capacity):
-	m_bufferContents(std::vector<Message>(capacity))
+Buffer::Buffer(const uint8_t capacity, const uint8_t ID):
+	m_ID(ID),
+    m_capacity(capacity),
+	m_data()
 {
 }
 
 uint8_t Buffer::capacity()
 {
-	return m_bufferContents.capacity();
+	return m_capacity;
 }
 
 uint8_t Buffer::size()
 {
-	return m_bufferContents.size();
+	return m_data.size();
 }
 
-bool Buffer::push(const Message msg)
+bool Buffer::push(const Payload& payload)
+{
 	bool success = false;
 
-	if (m_bufferContents.size() < m_bufferContents.capacity())
+	if ((m_data.size() < m_capacity) &&
+		(payload.ID() == m_ID))
 	{
-		m_bufferContents.push_back(msg);
+		m_data.push_back(payload);
 
 		success = true;
 	}
@@ -34,16 +38,19 @@ bool Buffer::push(const Message msg)
 	return success;
 }
 
-bool buffer::pop(Message& msg)
+bool Buffer::pop(Payload& payload)
 {
 	bool success = false;
-	if (m_buferContents.size() > 0U)
+
+	if (m_data.size() > 0)
 	{
-		msg = m_bufferContents.back();
-		m_bufferContents.pop_back();
+		payload = m_data.back();
+		m_data.pop_back();
 
 		success = true;
 	}
+
+	return success;
 }
 
 }

@@ -1,7 +1,7 @@
 #ifndef SERVICE_FRAMEWORK_TEXT_MESSAGE_H
 #define SERVICE_FRAMEWORK_TEXT_MESSAGE_H
 
-#include "Message.h"
+#include "Payload.h"
 #include <string>
 
 namespace ServiceFramework
@@ -10,24 +10,28 @@ namespace ServiceFramework
 namespace Communication
 {
 
-class TextMessage : public Message
+class TextMessage
 {
 public:
 
 	TextMessage();
-	~TextMessage();
-	TextMessage(TextMessage& other);
-	TextMessage& operator=(Message const& rhs);
 
+	uint8_t ID();
 	bool setText(const std::string& text);
 	std::string getText();
 
-	bool encode();
-	bool decode();
+	uint8_t payloadSize();
+	Payload toPayload();
+	bool fromPayload(const Payload& payload);
 
 private:
 
+	static const uint8_t TEXT_MSG_SIZE = 64U;
+	static const uint8_t TEXT_MSG_ID   = 1U;
+
+
 	std::string m_text;
+	Payload m_payload;
 };
 
 }
